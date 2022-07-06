@@ -1,19 +1,45 @@
-var requestUrl = 'https://ridb.recreation.gov/api/v1/recareas?limit=50&offset=0&state=GA&activity=HIKING,HIKINGTRAIL&latitude=33.7490&longitude=84.3880&radius=10&lastupdated=10-01-2018';
-var apiEnd = 'https://ridb.recreation.gov/api/v1/';
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-fetch(requestUrl, {
-  headers: {
-    Accept: "application/json",
-    Apikey: "93eb3bd5-8da6-4ff1-9ea2-37a779bd4aef",
-    Cache: "reload"
-  }
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  });
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("https://www.benbrougher.tech/hiker/v1/trails/", requestOptions)
+.then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      })
+  .catch(error => console.log('error', error));
+      
+// var requestUrl = 'https://www.benbrougher.tech/hiker/v1/trails/';
+
+// var apiEnd = 'https://ridb.recreation.gov/api/v1/';
+
+// var urlHeader = {
+//     headers: {
+//         "Content-Type": 'application/json'
+    //   Accept: "application/json",
+    //   Apikey: "93eb3bd5-8da6-4ff1-9ea2-37a779bd4aef"
+    //   Cache: "reload"
+//     }
+// };
+// fetch("https://www.benbrougher.tech/hiker/v1/trails/", {
+//   headers: {
+//     "Content-Type": "application/json"
+//   }
+// })
+// fetch(requestUrl, urlHeader)
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     console.log(data);
+//   });
 
 
 // var map_document = document.querySelector('#map')
