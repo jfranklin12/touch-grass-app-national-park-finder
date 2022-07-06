@@ -9,7 +9,8 @@ fetch("https://stormy-cliffs-87695.herokuapp.com/https://developer.nps.gov/api/v
     return response.json();
   })
   .then(function (data) {
+    dataStuff = new Array(data);
     console.log(data);
-    dataStuff = data[0].parks;
+    debugger;
     console.log(dataStuff);
   });
