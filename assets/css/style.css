@@ -9,5 +9,9 @@ body {
 
 .margins {
     margin-top: 20px;
-    
+}
+
+.buttonExpand {
+    height: 100%;
+    width: 100%;
 }
