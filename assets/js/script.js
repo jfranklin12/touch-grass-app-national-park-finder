@@ -70,6 +70,11 @@ searchButtonEl.addEventListener('click',function(){
     var input = searchInputEl.value;
     console.log(input);
 
+    var userSearch ={
+      state: searchInputEl.value.trim(),
+    }
+    localStorage.setItem("User Search", JSON.stringify(userSearch))
+
     fetch("https://developer.nps.gov/api/v1/parks?limit=500&api_key=M6zybiN7mrDQd0ocy5tTpMmFxZQmFdHcHCZZ1X0M", {  headers: {
       Accept: "application/json",
     }
@@ -103,7 +108,7 @@ function initMap() {
 
 window.initMap = initMap;
 
-// resetButtonEl.location.reload();
+
 
 
   
