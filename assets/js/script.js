@@ -21,7 +21,7 @@ var resultTextEl = document.getElementById('result-text');
 var searchResultsEl = document.getElementById('search-results');
 var searchInputEl = document.getElementById('search-input');
 var searchButtonEl = document.getElementById('submit-button');
-var resetButtonEl = document.getElementById('reset-button')
+var resetButtonEl = document.getElementById('reset-button');
 
 
 
@@ -35,7 +35,7 @@ function showResults(pikachu) {
   for( i=0; i<pikachu.length; i++){
     var resultCardEl = document.createElement('div');
     var resultMainEl = document.createElement('div');
-    var resultTitleEl = document.createElement('h4');
+    var resultTitleEl = document.createElement('h3');
     var resultContentEl = document.createElement('a');
 
   resultTitleEl.innerText = pikachu[i].fullName;
