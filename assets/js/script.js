@@ -24,6 +24,7 @@ var resultTextEl = document.getElementById('result-text');
 var searchResultsEl = document.getElementById('search-results');
 var searchInputEl = document.getElementById('search-input');
 var searchButtonEl = document.getElementById('submit-button');
+var resetButtonEl = document.getElementById('reset-button')
 
 
 
@@ -86,10 +87,7 @@ searchButtonEl.addEventListener('click',function(){
   showResults(pikachu)
   });
 
-
-
-
 })
 
-geocoder = new google.maps.Geocoder();
+// geocoder = new google.maps.Geocoder();
 

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Touch Grass App</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel='stylesheet' href="./assets/css/style.css"> 
   </head>
@@ -27,13 +28,14 @@
         <input id="search-input" type="text" class="form-control" placeholder="Search by State (Ex: GA)">
         <div class="input-group-append">
           <button id="submit-button" class="btn btn-outline-secondary" type="button">Search</button>
+          <!-- <button id="reset-button" class="btn btn-outline-secondary" type="reset">Reset</button> -->
         </div>
       </div>
         </div>
 
 <!--Where Google Mapps and Any information they searched will be-->
-        <div class="container margins">
-            <img src="https://owi.ucdavis.edu/sites/g/files/dgvnsk8926/files/styles/sf_landscape_16x9/public/media/images/google-maps-satellite.png?h=83823e20&itok=G9S9rzyI" class="img-fluid" alt="...">
+        <div class="container margins" id='map'>
+            <!-- <img src="https://owi.ucdavis.edu/sites/g/files/dgvnsk8926/files/styles/sf_landscape_16x9/public/media/images/google-maps-satellite.png?h=83823e20&itok=G9S9rzyI" class="img-fluid" alt="..."> -->
         </div>
 
         <!-- This div will show the search results for parks in a state -->
@@ -47,38 +49,7 @@
             </div>
           </div>
         </div>
-
-        <!-- for weather API if time -->
-            <div class="card-deck margins row">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  </div>
-                  <div class="card-footer">
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                  </div>
-                  <div class="card-footer">
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                  </div>
-                  <div class="card-footer">
-                  </div>
-                </div>
-              </div>
-                
-
-         
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRBh3bXaGL3tN7zrckfJ-yikBMRWII-yY&callback=initMap&v=weekly" defer></script>    
     <script src="./assets/js/script.js"></script>
 </body>
 
