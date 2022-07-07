@@ -11,6 +11,35 @@ fetch("https://stormy-cliffs-87695.herokuapp.com/https://developer.nps.gov/api/v
   .then(function (data) {
     dataStuff = new Array(data);
     console.log(data);
-    debugger;
+
     console.log(dataStuff);
+    newTabGMap();
+    initMap();
   });
+
+
+// function initMap() {
+//     var parkName = dataStuff[0].data[0].parks[1].fullName;
+//     debugger;
+//     var map = new google.maps.Map(document.getElementById("map"), {
+//       zoom: 4,
+//       center: parkName,
+//     });
+//     var marker = new google.maps.Marker({
+//       position: parkName,
+//       map: map,
+//     });
+    
+//   }
+  
+
+
+  function newTabGMap() {
+    var parkName = dataStuff[0].data[0].parks[2].fullName;
+    var nameToUrl = parkName.replace(/\s+/g, '+');
+    console.log(parkName + " " + nameToUrl);
+
+    window.open('https://www.google.com.sa/maps/search/'+ nameToUrl + '12.21z?hl=en', '_blank');
+
+  }
+
