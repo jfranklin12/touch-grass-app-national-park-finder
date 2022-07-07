@@ -2,6 +2,10 @@ var resultTextEl = document.getElementById('result-text');
 var searchResultsEl = document.getElementById('search-results');
 var searchInputEl = document.getElementById('search-input');
 var searchButtonEl = document.getElementById('submit-button');
+// var resultCardEl = documnet.createElement('div');
+// var resultMainEl = document.createElement('div');
+// var resultTitleEl = document.creaeElement('h4');
+// var resultContentEl = document.createElement('p');
 
 // function to loop information from API to search in JS
 
@@ -26,5 +30,26 @@ searchButtonEl.addEventListener('click',function(){
     console.log(stateParks);
   });
 
+  function showResults(listResults) {
+    console.log(listResults);
+
+    resultTextEl.textContent = input;
+
+    // resultTitleEl.textContent = stateParks;
+    // resultContentEl.textContent = stateParks;
+
+    // searchResultsEl.appendChild(resultCardEl);
+
+
+
+
+
+
+
+  }
+
+showResults()
+
 })
+
 
