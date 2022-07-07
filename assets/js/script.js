@@ -1,18 +1,21 @@
-// var dataStuff;
-// var dataTwo;
+var dataStuff;
+var parkName;
+var lineBreak = '\n';
+var geocoder;
 
-// fetch("https://stormy-cliffs-87695.herokuapp.com/https://developer.nps.gov/api/v1/activities/parks?stateCode=GA&id=BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA&api_key=M6zybiN7mrDQd0ocy5tTpMmFxZQmFdHcHCZZ1X0M", {  headers: {
-//       Accept: "application/json",
-//   }
-// })
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//     dataStuff = data[0].parks;
-//     console.log(dataStuff);
-//   });
+
+fetch("https://stormy-cliffs-87695.herokuapp.com/https://developer.nps.gov/api/v1/activities/parks?stateCode=GA&id=BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA&api_key=M6zybiN7mrDQd0ocy5tTpMmFxZQmFdHcHCZZ1X0M", {  headers: {
+      Accept: "application/json",
+  }
+})
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    dataStuff = new Array(data);
+    console.log(dataStuff);
+  });
 
 
 // Search Bar Input and Results
@@ -35,16 +38,28 @@ function showResults(pikachu) {
   for( i=0; i<pikachu.length; i++){
     var resultCardEl = document.createElement('div');
     var resultMainEl = document.createElement('div');
-    var resultTitleEl = document.createElement('h4');
+    var resultTitleEl = document.createElement('a');
     var resultContentEl = document.createElement('a');
 
   resultTitleEl.innerText = pikachu[i].fullName;
   resultContentEl.textContent = pikachu[i].url;
 
+  parkName = pikachu[i].fullName;
+
+  // turns the children into links that search google maps by park name
+  var nameToUrl = pikachu[i].fullName.replace(/\s+/g, '+');
+  resultTitleEl.setAttribute("href", 'https://www.google.com.sa/maps/search/'+ nameToUrl + '12.21z?hl=en', '_blank');
+  resultTitleEl.id = 'parkName';
+  resultContentEl.setAttribute("href", pikachu[i].url, '_blank');
+
   searchResultsEl.appendChild(resultCardEl);
   resultCardEl.appendChild(resultMainEl);
   resultMainEl.appendChild(resultTitleEl);
   resultMainEl.appendChild(resultContentEl);
+
+  
+  
+  
   }
 }
 
@@ -62,6 +77,7 @@ searchButtonEl.addEventListener('click',function(){
   })
   .then(function (data) {
     console.log(data);
+    dataStuff = new Array(data);
     // console.log(dataStuff);
     // call function getData(data)
     var pikachu = data.data[0].parks.filter(function(park){
@@ -74,23 +90,5 @@ searchButtonEl.addEventListener('click',function(){
 
 })
 
-// show the map, the lat/long are just fillers here.
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
-
-window.initMap = initMap;
-
-// resetButtonEl.location.reload();
-
-
-  
-
-
-
+// geocoder = new google.maps.Geocoder();
 

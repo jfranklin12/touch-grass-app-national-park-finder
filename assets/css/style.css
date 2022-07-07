@@ -19,6 +19,11 @@ body {
     width: 100%;
 }
 
-#map {
-    height: 400px;
+a {
+    text-decoration: none;
+}
+
+#parkName {
+    font-size: 36px;
+    text-decoration: underline;
 }
