@@ -28,6 +28,7 @@ var resetButtonEl = document.getElementById('reset-button')
 // function to display information on National State Parks from user search to card under map
 function showResults(pikachu) {
   console.log(pikachu);
+  searchResultsEl.innerHTML= '';
   var input = searchInputEl.value;
   resultTextEl.textContent = input;
 
