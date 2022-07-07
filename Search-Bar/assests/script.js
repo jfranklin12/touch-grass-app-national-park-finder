@@ -2,31 +2,40 @@ var resultTextEl = document.getElementById('result-text');
 var searchResultsEl = document.getElementById('search-results');
 var searchInputEl = document.getElementById('search-input');
 var searchButtonEl = document.getElementById('submit-button');
-var resultCardEl = document.createElement('div');
-var resultMainEl = document.createElement('div');
-var resultTitleEl = document.createElement('h4');
-var resultContentEl = document.createElement('p');
+
 
 
 // function to loop information from API to search in JS
-
 function showResults(pikachu) {
   console.log(pikachu);
-
   var input = searchInputEl.value;
-
   resultTextEl.textContent = input;
 
-  resultTitleEl.textContent = pikachu;
-  resultContentEl.textContent = pikachu;
+  for( i=0; i<pikachu.length; i++){
+    var resultCardEl = document.createElement('div');
+    var resultMainEl = document.createElement('div');
+    var resultTitleEl = document.createElement('h4');
+    var resultContentEl = document.createElement('a');
 
-  // .data[0].parks.fullName
-  // .data[0].parks.url
+
+
+
+
+  // document.getElementById("search-results").innerHTML = data.parks
+  // var parkName = NodeFilter.SHOW_TEXT.fullName;
+
+  resultTitleEl.innerText = pikachu[i].fullName;
+  resultContentEl.textContent = pikachu[i].url;
+
+  // // .data[0].parks.fullName
+  // // .data[0].parks.url
   searchResultsEl.appendChild(resultCardEl);
   resultCardEl.appendChild(resultMainEl);
-  resultMainEl.appendChild(resultTextEl);
+  resultMainEl.appendChild(resultTitleEl);
   resultMainEl.appendChild(resultContentEl);
+  }
 }
+
 
 searchButtonEl.addEventListener('click',function(){
     var input = searchInputEl.value;
