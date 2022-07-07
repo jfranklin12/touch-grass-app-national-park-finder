@@ -2,12 +2,31 @@ var resultTextEl = document.getElementById('result-text');
 var searchResultsEl = document.getElementById('search-results');
 var searchInputEl = document.getElementById('search-input');
 var searchButtonEl = document.getElementById('submit-button');
-// var resultCardEl = documnet.createElement('div');
-// var resultMainEl = document.createElement('div');
-// var resultTitleEl = document.creaeElement('h4');
-// var resultContentEl = document.createElement('p');
+var resultCardEl = document.createElement('div');
+var resultMainEl = document.createElement('div');
+var resultTitleEl = document.createElement('h4');
+var resultContentEl = document.createElement('p');
+
 
 // function to loop information from API to search in JS
+
+function showResults(pikachu) {
+  console.log(pikachu);
+
+  var input = searchInputEl.value;
+
+  resultTextEl.textContent = input;
+
+  resultTitleEl.textContent = pikachu;
+  resultContentEl.textContent = pikachu;
+
+  // .data[0].parks.fullName
+  // .data[0].parks.url
+  searchResultsEl.appendChild(resultCardEl);
+  resultCardEl.appendChild(resultMainEl);
+  resultMainEl.appendChild(resultTextEl);
+  resultMainEl.appendChild(resultContentEl);
+}
 
 searchButtonEl.addEventListener('click',function(){
     var input = searchInputEl.value;
@@ -24,31 +43,16 @@ searchButtonEl.addEventListener('click',function(){
     console.log(data);
     // console.log(dataStuff);
     // call function getData(data)
-    var stateParks = data.data[0].parks.filter(function(park){
+    var pikachu = data.data[0].parks.filter(function(park){
       return park.states.includes(input.toUpperCase())
     })
-    console.log(stateParks);
+    console.log(pikachu);
+
+  showResults(pikachu)
   });
 
-  function showResults(listResults) {
-    console.log(listResults);
-
-    resultTextEl.textContent = input;
-
-    // resultTitleEl.textContent = stateParks;
-    // resultContentEl.textContent = stateParks;
-
-    // searchResultsEl.appendChild(resultCardEl);
 
 
-
-
-
-
-
-  }
-
-showResults()
 
 })
 
