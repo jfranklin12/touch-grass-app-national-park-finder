@@ -86,3 +86,14 @@ UX/UI  -
     
     Most of the focus was working to find a way sort the data from 
     the fetch.
+
+
+    July 7 - 
+    API -
+    Fixed Google Maps issue 
+
+    UX-UI-
+
+    Slight changes on CCS as it caused issues with display fetch return data. The primary example was with the use 
+    of " * " in CSS. If you aplied a background-color in CSS in the " * " section, it would cover the data display on 
+    your webpage.
