@@ -24,9 +24,9 @@
         <!-- <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div> -->
-        <input type="text" class="form-control" placeholder="Enter City, State or ZIP"">
+        <input id="search-input" type="text" class="form-control" placeholder="Search by State (Ex: GA)">
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">Search</button>
+          <button id="sumbit-button" class="btn btn-outline-secondary" type="button">Search</button>
         </div>
       </div>
         </div>
@@ -36,10 +36,11 @@
             <img src="https://owi.ucdavis.edu/sites/g/files/dgvnsk8926/files/styles/sf_landscape_16x9/public/media/images/google-maps-satellite.png?h=83823e20&itok=G9S9rzyI" class="img-fluid" alt="...">
         </div>
 
+        <!-- This div will show the search results for parks in a state -->
         <div class="card-deck margins row">
           <div class="card">
             <div class="card-body">
-              <h2 class="card-title">State Parks in<span id="result-text"></span></h2>
+              <h2 class="card-title">State Parks in <span id="result-text"></span></h2>
               <div id="search-results"></div>
             </div>
             <div class="card-footer">
