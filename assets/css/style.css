@@ -1,8 +1,4 @@
 
-* {
-    background-color: #945145;
-}
-
 body {
     background-color: #945145
 }
@@ -11,7 +7,7 @@ body {
   display: flex;
   width: 100%;
 }
-
+ 
 .margins {
     margin-top: 20px;
     margin-left: auto;
@@ -21,4 +17,8 @@ body {
 .buttonExpand {
     height: 100%;
     width: 100%;
+}
+
+#map {
+    height: 400px;
 }
