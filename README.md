@@ -11,7 +11,11 @@ Group project members were: Paulo Condori Pinedo, Ashley Thompson, Vincent Yang,
 
 Project time frame: 3 days July 5 9 a.m. - July 8 12 a.m. (Code Freeze)
 
+
+
 July 5 -------------
+
+
 
 Group members proposed ideas for the project. The intial main ideas for the project were:
     - Providing location and information for people interested in hiking
@@ -60,6 +64,7 @@ UX/UI  -
 
     SUMMARY OF DAY 1:
 
+
     UX design first draft was complete.
     Group changed scope to National Park. 
     We now focused on making a website that would show the parks in the State they searched for.
@@ -69,6 +74,8 @@ UX/UI  -
  
 
     July 6 - 
+
+
 
     API - 
 
@@ -86,14 +93,33 @@ UX/UI  -
     
     Most of the focus was working to find a way sort the data from 
     the fetch.
+    
 
 
     July 7 - 
+
+
+
     API -
     Fixed Google Maps issue 
 
     UX-UI-
 
+    First half of the day -
     Slight changes on CCS as it caused issues with display fetch return data. The primary example was with the use 
     of " * " in CSS. If you aplied a background-color in CSS in the " * " section, it would cover the data display on 
-    your webpage.
+    your webpage. Resolved issues with fetching the correct data with the National Park API. Website started to come along.
+
+    ![An updated version of our website](./assets/images/blank-search.png)
+
+
+
+
+    SECOND UPDATE ON WEBSITE DAY 3 July 7
+
+    National Park API works with page. Google also interacts with user input.
+
+      ![Example of result after User interface](./assets/images/returned-search.png)
+
+    
+
