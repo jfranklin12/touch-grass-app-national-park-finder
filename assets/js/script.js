@@ -1,18 +1,18 @@
-var dataStuff;
-var dataTwo;
+// var dataStuff;
+// var dataTwo;
 
-fetch("https://stormy-cliffs-87695.herokuapp.com/https://developer.nps.gov/api/v1/activities/parks?stateCode=GA&id=BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA&api_key=M6zybiN7mrDQd0ocy5tTpMmFxZQmFdHcHCZZ1X0M", {  headers: {
-      Accept: "application/json",
-  }
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-    dataStuff = data[0].parks;
-    console.log(dataStuff);
-  });
+// fetch("https://stormy-cliffs-87695.herokuapp.com/https://developer.nps.gov/api/v1/activities/parks?stateCode=GA&id=BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA&api_key=M6zybiN7mrDQd0ocy5tTpMmFxZQmFdHcHCZZ1X0M", {  headers: {
+//       Accept: "application/json",
+//   }
+// })
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     console.log(data);
+//     dataStuff = data[0].parks;
+//     console.log(dataStuff);
+//   });
 
 
 // Search Bar Input and Results
@@ -21,6 +21,7 @@ var resultTextEl = document.getElementById('result-text');
 var searchResultsEl = document.getElementById('search-results');
 var searchInputEl = document.getElementById('search-input');
 var searchButtonEl = document.getElementById('submit-button');
+var resetButtonEl = document.getElementById('reset-button')
 
 
 
@@ -70,9 +71,13 @@ searchButtonEl.addEventListener('click',function(){
   showResults(pikachu)
   });
 
-
-
-
 })
+
+// resetButtonEl.location.reload();
+
+
+  
+
+
 
 
