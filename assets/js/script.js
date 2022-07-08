@@ -63,39 +63,35 @@ function searchMap(event){
   var toMap = document.getElementById('submit-button');
   var mapPosition = toMap.offsetTop;
   console.log(mapPosition);
-  // mapPosition.scrollIntoView; 
   var parkName = event.target.textContent;
   var nameToUrl = parkName.replace(/\s+/g, '+');
   console.log(myCoordinates);
   console.log(parkName);
   console.log(parkName + " " + nameToUrl);  
-
+//focuses the map on the lat/long of selected park
   map = new google.maps.Map(document.getElementById("map"), {
     center: myCoordinates,
     zoom: 8,
   }); 
-  
+//scrolls back up to map
   window.scrollTo({
     left:0, 
     top: 986,
     behavior: 'smooth'
   });
-
+//drops pin in the center of map
   var pin = new google.maps.Marker({
     position: myCoordinates,
     map,
     title: parkName,
 });
-
-    var popupCard = "<h3><a href='https://www.google.com.sa/maps/search/" + nameToUrl + "12.21z?hl=en'>"+parkName+"</a></h3>"+ '<p>'+parkDescription+'</p>'
+//displays text and adds google maps link to popup card
+    var popupCard = "<h3><a href='https://www.google.com.sa/maps/search/" + nameToUrl + "12.21z?hl=en'>"+parkName+"</a></h3>"+ '<p>🚧 This card feature is currently under construction! 🚧</p>'
     
     var infowindow = new google.maps.InfoWindow({
       content: popupCard,
     });
-
-    console.log(popupCard);
-    console.log(infowindow);
-  
+//pops up card above pin
     infowindow.open({
       anchor: pin,
       map,
