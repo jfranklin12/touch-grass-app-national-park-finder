@@ -10,7 +10,6 @@ var parkUrl= document.createElement('a');
 
 // function to display information on National State Parks from user search to card under map
 function showResults(pikachu) {
-  console.log(pikachu);
   searchResultsEl.innerHTML= '';
   var input = searchInputEl.value;
   resultTextEl.textContent = input;
@@ -38,26 +37,21 @@ function showResults(pikachu) {
 }
 // Searches map for state park
 function searchMap(event){
-  console.log(event.target);
   // create function for searching location on map
   var myCoordinates = { lat: parseFloat(event.target.dataset.lat), lng: parseFloat(event.target.dataset.lon)};
-  var toMap = document.getElementById('submit-button');
-  var mapPosition = toMap.offsetTop;
-  console.log(mapPosition);
   var parkName = event.target.textContent;
   var nameToUrl = parkName.replace(/\s+/g, '+');
-  console.log(myCoordinates);
-  console.log(parkName);
-  console.log(parkName + " " + nameToUrl);  
 //focuses the map on the lat/long of selected park
   map = new google.maps.Map(document.getElementById("map"), {
     center: myCoordinates,
     zoom: 8,
   }); 
 //scrolls back up to map
+var toMap = document.getElementById('map');
+
   window.scrollTo({
     left:0, 
-    top: 986,
+    top: toMap.offsetTop,
     behavior: 'smooth'
   });
 //drops pin in the center of map
