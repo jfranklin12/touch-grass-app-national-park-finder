@@ -22,3 +22,12 @@ body {
 #map {
     height: 400px;
 }
+
+.parkNameList {
+    text-decoration: underline;
+}
+
+.parkNameList:hover{
+    cursor: grab;
+    color:blue;
+}

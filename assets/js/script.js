@@ -22,6 +22,8 @@ var searchResultsEl = document.getElementById('search-results');
 var searchInputEl = document.getElementById('search-input');
 var searchButtonEl = document.getElementById('submit-button');
 var resetButtonEl = document.getElementById('reset-button');
+var parkDescription = document.createElement('p');
+var parkUrl= document.createElement('a');
 
 
 
@@ -38,17 +40,15 @@ function showResults(pikachu) {
     var resultTitleEl = document.createElement('h3');
     var resultContentEl = document.createElement('a');
 
+  resultTitleEl.classList.add('parkNameList')
   resultTitleEl.innerText = pikachu[i].fullName;
   resultContentEl.textContent = pikachu[i].url;
-
-  parkName = pikachu[i].fullName;
-
-  resultTitleEl.dataset.lat=pikachu[i].latitude
-  resultTitleEl.dataset.lon=pikachu[i].longitude
+  resultTitleEl.dataset.lat=pikachu[i].latitude;
+  resultTitleEl.dataset.lon=pikachu[i].longitude;
+  parkDescription = toString(pikachu[i].description);
+  resultContentEl.setAttribute("href", pikachu[i].url, '_blank');
   resultTitleEl.addEventListener('click', searchMap);
   resultTitleEl.id = 'parkName';
-  resultContentEl.setAttribute("href", pikachu[i].url, '_blank');
-
   searchResultsEl.appendChild(resultCardEl);
   resultCardEl.appendChild(resultMainEl);
   resultMainEl.appendChild(resultTitleEl);
@@ -59,12 +59,45 @@ function showResults(pikachu) {
 function searchMap(event){
   console.log(event.target);
   // create function for searching location on map
-  var lat = event.target.dataset.lat
-  var lon = event.target.dataset.lon
-  console.log(lat);
-  console.log(lon);
+  var myCoordinates = { lat: parseFloat(event.target.dataset.lat), lng: parseFloat(event.target.dataset.lon)};
+  var toMap = document.getElementById('submit-button');
+  var mapPosition = toMap.offsetTop;
+  console.log(mapPosition);
+  var parkName = event.target.textContent;
+  var nameToUrl = parkName.replace(/\s+/g, '+');
+  console.log(myCoordinates);
+  console.log(parkName);
+  console.log(parkName + " " + nameToUrl);  
+//focuses the map on the lat/long of selected park
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: myCoordinates,
+    zoom: 8,
+  }); 
+//scrolls back up to map
+  window.scrollTo({
+    left:0, 
+    top: 986,
+    behavior: 'smooth'
+  });
+//drops pin in the center of map
+  var pin = new google.maps.Marker({
+    position: myCoordinates,
+    map,
+    title: parkName,
+});
+//displays text and adds google maps link to popup card
+    var popupCard = "<h3><a href='https://www.google.com.sa/maps/search/" + nameToUrl + "12.21z?hl=en'>"+parkName+"</a></h3>"+ '<p>🚧 This card feature is currently under construction! 🚧</p>'
+    
+    var infowindow = new google.maps.InfoWindow({
+      content: popupCard,
+    });
+//pops up card above pin
+    infowindow.open({
+      anchor: pin,
+      map,
+      shouldFocus: false,
+});
 }
-
 // Search button listener to search API for results that match User Input
 searchButtonEl.addEventListener('click',function(){
     var input = searchInputEl.value;
