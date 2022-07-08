@@ -11,7 +11,7 @@ Group project members were: Paulo Condori Pinedo, Ashley Thompson, Vincent Yang,
 
 Project time frame: 3 days July 5 9 a.m. - July 8 12 a.m. (Code Freeze)
 
-July 5 -------------
+## July 5 -------------
 
 Group members proposed ideas for the project. The intial main ideas for the project were:
     - Providing location and information for people interested in hiking
@@ -30,7 +30,7 @@ Final Decision on proposed ideas:
     - The final(tentative) decision was to pursue the Parks in Georgia idea due to the fact there were a decent amount of 
     API's that we could use to fetch and pull the information we wanted. 
 
-Brief Summary of the Work done after the decision was made:
+## Brief Summary of the Work done after the decision was made:
 
 The group was split into two groups. One focused on the UX/UI design and another on the API fetch code. 
 
@@ -58,7 +58,7 @@ UX/UI  -
 
 ![Here's our first draft](./assets/images/UX-firstdraft.png)
 
-    SUMMARY OF DAY 1:
+## SUMMARY OF DAY 1:
 
     UX design first draft was complete.
     Group changed scope to National Park. 
@@ -68,7 +68,7 @@ UX/UI  -
 
  
 
-    July 6 - 
+## July 6 - 
 
     API - 
 
@@ -82,13 +82,13 @@ UX/UI  -
 
     Created Hero image on canvas and made it mobile responsive. 
 
-    SUMMARY OF DAY 2:
+    ## SUMMARY OF DAY 2:
     
     Most of the focus was working to find a way sort the data from 
     the fetch.
 
 
-    July 7 - 
+## July 7 - 
     API -
     Fixed Google Maps issue 
 
@@ -97,3 +97,16 @@ UX/UI  -
     Slight changes on CCS as it caused issues with display fetch return data. The primary example was with the use 
     of " * " in CSS. If you aplied a background-color in CSS in the " * " section, it would cover the data display on 
     your webpage.
+
+## Conclusion:
+
+    The following images demonstrate the app's functionality:  
+    ![blank search](./assets/images/blank-search.png)  
+    ![returned search](./assets/images/returned-search.png)
+    ![dropped pin](./assets/images/pin-drop.png)
+
+## Deployed Application
+https://ashley1thompson.github.io/touch-grass-app-national-park-finder/
+
+## Github Repo Link
+https://github.com/Ashley1Thompson/touch-grass-app-national-park-finder
