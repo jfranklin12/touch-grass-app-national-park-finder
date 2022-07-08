@@ -101,9 +101,10 @@ UX/UI  -
 ## Conclusion:
 
     The following images demonstrate the app's functionality:  
-    ![blank search](./assets/images/blank-search.png)  
-    ![returned search](./assets/images/returned-search.png)
-    ![dropped pin](./assets/images/pin-drop.png)
+    
+![blank search](./assets/images/blank-search.png)  
+![returned search](./assets/images/returned-search.png)
+![dropped pin](./assets/images/pin-drop.png)
 
 ## Deployed Application
 https://ashley1thompson.github.io/touch-grass-app-national-park-finder/
