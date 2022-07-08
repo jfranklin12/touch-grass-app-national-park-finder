@@ -1,20 +1,3 @@
-// var dataStuff;
-// var dataTwo;
-
-// fetch("https://stormy-cliffs-87695.herokuapp.com/https://developer.nps.gov/api/v1/activities/parks?stateCode=GA&id=BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA&api_key=M6zybiN7mrDQd0ocy5tTpMmFxZQmFdHcHCZZ1X0M", {  headers: {
-//       Accept: "application/json",
-//   }
-// })
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//     dataStuff = data[0].parks;
-//     console.log(dataStuff);
-//   });
-
-
 // Search Bar Input and Results
 // Global variables for search bar and results
 var resultTextEl = document.getElementById('result-text');
@@ -24,8 +7,6 @@ var searchButtonEl = document.getElementById('submit-button');
 var resetButtonEl = document.getElementById('reset-button');
 var parkDescription = document.createElement('p');
 var parkUrl= document.createElement('a');
-
-
 
 // function to display information on National State Parks from user search to card under map
 function showResults(pikachu) {
@@ -108,6 +89,7 @@ searchButtonEl.addEventListener('click',function(){
     }
     localStorage.setItem("User Search", JSON.stringify(userSearch))
 
+  //fetching park data from NPS API
     fetch("https://developer.nps.gov/api/v1/parks?limit=500&api_key=M6zybiN7mrDQd0ocy5tTpMmFxZQmFdHcHCZZ1X0M", {  headers: {
       Accept: "application/json",
     }
@@ -117,8 +99,6 @@ searchButtonEl.addEventListener('click',function(){
   })
   .then(function (data) {
     console.log(data);
-    // console.log(dataStuff);
-    // call function getData(data)
     var pikachu = data.data.filter(function(park){
       return park.states.includes(input.toUpperCase())
     })
@@ -129,7 +109,7 @@ searchButtonEl.addEventListener('click',function(){
 
 })
 
-// show the map, the lat/long are just fillers here.
+// initializing the Google map as the page loads
 let map;
 
 function initMap() {
